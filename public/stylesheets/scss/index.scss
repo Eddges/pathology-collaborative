@@ -1,0 +1,45 @@
+@import './colors.scss';
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.Menu{
+    width: 100px;
+    height: 100%;
+    background-color: $primary;
+}
+
+.Container{
+    width: calc(100% - 100px);
+    height: 100%;
+    display: flex;
+    position: relative;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    nav{
+        color: $primary;
+        font-weight: bold;
+        font-size: 1.5rem;
+        position: absolute;
+        top: 4vh;
+        left: 4vh;
+    }
+    .ChatMain{
+        background-color: #f2f7fe;
+        width: 70%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+    }
+}
