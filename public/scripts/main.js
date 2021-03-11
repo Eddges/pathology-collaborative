@@ -20,7 +20,7 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
         }
     })
     
-    socket.on('sendMessage', ({msg, user}) => {
+    socket.on('sendMessage', ({msg, user, time}) => {
         const messageDiv = document.createElement('div')
         messageDiv.classList.add('ChatRow')
         if (user === localStorage.getItem('user')) {
@@ -29,7 +29,7 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
             messageDiv.classList.add('RowLeft')
         }
         messageDiv.innerHTML = `
-            <span class='Meta'>${user} <i>${(new Date).getHours()}</i></span>
+            <span class='Meta'>${user} <i>${time}</i></span>
             <span class='Message'>${msg}</span>
             `
         chatMessages.appendChild(messageDiv)
