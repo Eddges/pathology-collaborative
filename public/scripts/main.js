@@ -2,9 +2,10 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
     window.location.href = '/login'
 } else {
     const username = localStorage.getItem('user')
+    const room = localStorage.getItem('room')
 
     const socket = io()
-    socket.emit('userJoin', {user: localStorage.getItem('user')})
+    socket.emit('userJoin', {user: username, room})
     
     const chatMessages = document.querySelector('.ChatMessages')
     const chatInput = document.querySelector('#chatInput')
@@ -54,5 +55,9 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
             `
         chatMessages.appendChild(messageDiv)
         chatMessages.scrollTop = chatMessages.scrollHeight;
+    })
+
+    socket.on('disconnect', () => {
+        socket.emit('userDisconnected', {user: username})
     })
 }
