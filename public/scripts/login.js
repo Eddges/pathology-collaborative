@@ -5,13 +5,13 @@ const loginRoom = document.querySelector('#loginRoom')
 form.addEventListener('submit', e => {
     e.preventDefault()
     if (loginName.value) {
-        localStorage.setItem('user', loginName)
+        localStorage.setItem('user', loginName.value)
     } else {
         alert('Please provide a username')
     }
 
     if (loginRoom.value) {
-        localStorage.setItem('room', loginRoom)
+        localStorage.setItem('room', loginRoom.value)
     } else {
         alert('Please provide a room name')
     }

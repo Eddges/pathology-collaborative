@@ -3,9 +3,9 @@ const io = require('socket.io')(http)
 
 io.on('connection', socket => {
     console.log('User connected')
-    socket.on('sendMessage', msg => {
+    socket.on('sendMessage', ({msg, user}) => {
         console.log('Chat value: ', msg)
-        socket.broadcast.emit('sendMessage', msg)
+        io.emit('sendMessage', {msg, user})
     })
     socket.on('disconnect', () => {
         console.log('User disconnected')

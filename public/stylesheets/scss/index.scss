@@ -127,22 +127,31 @@ body{
             display: flex;
             flex-direction: column;
             .ChatRow{
+                width: 100%;
                 padding: 8px 8px;
                 display: flex;
+                flex-direction: column;
+                .Meta{
+                    color: $darkGrey;
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    padding: 0px 4px;
+                }
                 .Message{
                     max-width: 60%;
                     background-color: $primary;
                     color: white;
                     font-weight: bold;
+                    margin-top: 4px;
                     padding: 6px 12px;
                     border-radius: 4px;
                 }
             }
             .RowLeft{
-                justify-content: flex-start;
+                align-items: flex-start;
             }
             .RowRight{
-                justify-content: flex-end;
+                align-items: flex-end;
             }
         }
         .Input{

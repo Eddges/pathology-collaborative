@@ -128,22 +128,31 @@ body {
   flex-direction: column;
 }
 .Container .ChatContainer .ChatMessages .ChatRow {
+  width: 100%;
   padding: 8px 8px;
   display: flex;
+  flex-direction: column;
+}
+.Container .ChatContainer .ChatMessages .ChatRow .Meta {
+  color: #303030;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0px 4px;
 }
 .Container .ChatContainer .ChatMessages .ChatRow .Message {
   max-width: 60%;
   background-color: #5900CA;
   color: white;
   font-weight: bold;
+  margin-top: 4px;
   padding: 6px 12px;
   border-radius: 4px;
 }
 .Container .ChatContainer .ChatMessages .RowLeft {
-  justify-content: flex-start;
+  align-items: flex-start;
 }
 .Container .ChatContainer .ChatMessages .RowRight {
-  justify-content: flex-end;
+  align-items: flex-end;
 }
 .Container .ChatContainer .Input {
   display: flex;
