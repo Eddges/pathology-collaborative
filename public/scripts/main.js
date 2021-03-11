@@ -29,7 +29,7 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
             messageDiv.classList.add('RowLeft')
         }
         messageDiv.innerHTML = `
-            <span class='Meta'>${user} <i>${new Date}</i></span>
+            <span class='Meta'>${user} <i>${(new Date).getHours()}</i></span>
             <span class='Message'>${msg}</span>
             `
         chatMessages.appendChild(messageDiv)
