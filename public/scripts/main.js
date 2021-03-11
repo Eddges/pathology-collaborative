@@ -10,6 +10,19 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
     const chatMessages = document.querySelector('.ChatMessages')
     const chatInput = document.querySelector('#chatInput')
     const chatSend = document.querySelector('#chatSend')
+    const chatPill = document.querySelector('.ChatPill')
+    const chatContainer = document.querySelector('#chatContainer')
+    const closeButton = document.querySelector('.CloseButton')
+
+    chatPill.addEventListener('click', () => {
+        chatPill.classList.add('ChatPillHidden')
+        chatContainer.classList.remove('ChatContainerHidden')
+    })
+
+    closeButton.addEventListener('click', () => {
+        chatPill.classList.remove('ChatPillHidden')
+        chatContainer.classList.add('ChatContainerHidden')
+    })
     
     chatInput.addEventListener('keyup', e => {
         if (e.keyCode === 13) {
