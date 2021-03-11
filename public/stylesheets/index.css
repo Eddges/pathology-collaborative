@@ -71,9 +71,29 @@ body {
 .Container .ChatContainer .ChatMessages {
   background-color: #f2f7fe;
   min-height: 200px;
+  max-height: 75%;
+  overflow-y: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+.Container .ChatContainer .ChatMessages .ChatRow {
+  padding: 8px 8px;
+  display: flex;
+}
+.Container .ChatContainer .ChatMessages .ChatRow .Message {
+  max-width: 60%;
+  background-color: #5900CA;
+  color: white;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+.Container .ChatContainer .ChatMessages .RowLeft {
+  justify-content: flex-start;
+}
+.Container .ChatContainer .ChatMessages .RowRight {
+  justify-content: flex-end;
 }
 .Container .ChatContainer .Input {
   display: flex;
