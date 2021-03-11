@@ -8,6 +8,12 @@ app.get('/', (req, res) => {
 
 io.on('connection', socket => {
     console.log('User connected')
+    socket.on('chat message', value => {
+        console.log('Chat value: ', value)
+    })
+    socket.on('disconnect', () => {
+        console.log('User disconnected')
+    })
 })
 
 http.listen(process.env.PORT || 3000, () => {
