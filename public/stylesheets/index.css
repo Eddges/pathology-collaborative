@@ -34,12 +34,75 @@ body {
   top: 4vh;
   left: 4vh;
 }
-.Container .ChatMain {
-  background-color: #f2f7fe;
+.Container .ChatContainer {
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
   width: 70%;
   height: 70%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.Container .ChatContainer .Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.Container .ChatContainer .Header .Left {
+  padding-left: 10px;
+  color: #5900CA;
+  font-size: 1.25rem;
+}
+.Container .ChatContainer .Header .Left :nth-child(2) {
+  padding-left: 5px;
+  font-weight: bold;
+}
+.Container .ChatContainer .Header .CloseButton {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.Container .ChatContainer .Header .CloseButton:hover {
+  cursor: pointer;
+}
+.Container .ChatContainer .ChatMessages {
+  background-color: #f2f7fe;
+  min-height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.Container .ChatContainer .Input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 12px;
+}
+.Container .ChatContainer .Input input {
+  width: 80%;
+  height: 40px;
+  padding: 0px 20px;
+  border: solid 1px #767676;
+  background-color: #F3F3F3;
+  border-radius: 4px;
+}
+.Container .ChatContainer .Input i {
+  width: 8%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5900CA;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.Container .ChatContainer .Input i:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.css.map */

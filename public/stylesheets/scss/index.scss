@@ -35,11 +35,75 @@ body{
         top: 4vh;
         left: 4vh;
     }
-    .ChatMain{
-        background-color: #f2f7fe;
+    .ChatContainer{
+        background-color: white;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        border-radius: 5px;
         width: 70%;
         height: 70%;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        .Header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            .Left{
+                padding-left: 10px;
+                color: $primary;
+                font-size: 1.25rem;
+                :nth-child(2) {
+                    padding-left: 5px;
+                    font-weight: bold;
+                }
+            }
+            .CloseButton{
+                font-size: 1.25rem;
+                font-weight: bold;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        .ChatMessages{
+            background-color: #f2f7fe;
+            min-height: 200px; 
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .Input{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 12px;
+            input{
+                width: 80%;
+                // padding: 8px 20px;
+                height: 40px;
+                padding: 0px 20px;
+                border: solid 1px $stroke;
+                background-color: $lightGrey;
+                border-radius: 4px;
+            }
+            i{
+                width: 8%;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $primary;
+                color: white;
+                border-radius: 8px;
+                box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }
