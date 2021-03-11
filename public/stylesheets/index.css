@@ -11,6 +11,56 @@ body {
   display: flex;
 }
 
+.LoginContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5900CA;
+}
+.LoginContainer .Form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  min-width: 300px;
+  padding: 40px 24px;
+  border-radius: 8px;
+}
+.LoginContainer .Form .Logo {
+  color: #5900CA;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.LoginContainer .Form label {
+  margin-top: 24px;
+  font-weight: bold;
+  color: #F3F3F3;
+  font-size: 0.8rem;
+  color: #5900CA;
+}
+.LoginContainer .Form input {
+  padding: 8px;
+  border: solid 1px #5900CA;
+  margin-top: 8px;
+  border-radius: 4px;
+  background-color: #f6edff;
+}
+.LoginContainer .Form button {
+  margin-top: 24px;
+  background-color: #5900CA;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 8px;
+  transition: all 0.2s;
+}
+.LoginContainer .Form button:hover {
+  cursor: pointer;
+  background-color: #5800cae7;
+}
+
 .Menu {
   width: 100px;
   height: 100%;
