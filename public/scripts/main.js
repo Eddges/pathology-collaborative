@@ -90,39 +90,36 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
 
     audioSendButton.addEventListener('click', () => {
         sendAudioFlag = !sendAudioFlag
-        // if (sendAudioFlag) {
-            const constraints = { audio: true }
-            navigator.mediaDevices.getUserMedia(constraints).then(mediaStream => {
-                const mediaRecorder = new MediaRecorder(mediaStream)
-                mediaRecorder.onstart = function(e) {
-                    this.chunks = []
-                }
-                mediaRecorder.ondataavailable = function(e) {
-                    this.chunks.push(e.data)
-                    console.log('data available')
-                }
-                mediaRecorder.onstop = function(e) {
-                    const blob = new Blob(this.chunks, { 'type': 'audio/ogg; codecs=opus' })
-                    socket.emit('radio', blob)
-                    console.log('voice stopped')
-                }
+        const constraints = { audio: true }
+        navigator.mediaDevices.getUserMedia(constraints).then(mediaStream => {
+            const mediaRecorder = new MediaRecorder(mediaStream)
+            mediaRecorder.onstart = function(e) {
+                this.chunks = []
+            }
+            mediaRecorder.ondataavailable = function(e) {
+                this.chunks.push(e.data)
+                console.log('data available')
+            }
+            mediaRecorder.onstop = function(e) {
+                const blob = new Blob(this.chunks, { 'type': 'audio/ogg; codecs=opus' })
+                socket.emit('radio', blob)
+                console.log('voice stopped')
+            }
 
-                if (sendAudioFlag) {
-                    window.mediaInterval = setInterval(function() {
-                        mediaRecorder.start()
-        
-                        setTimeout(function() {
-                            mediaRecorder.stop()
-                        }, 995)
-                    }, 1000)
-                } else {
-                    clearInterval(window.mediaInterval)
-                }
+            if (sendAudioFlag) {
+                audioSendButton.classList.add('AudioOn')
+                window.mediaInterval = setInterval(function() {
+                    mediaRecorder.start()
+                    setTimeout(function() {
+                        mediaRecorder.stop()
+                    }, 990)
+                }, 1000)
+            } else {
+                audioSendButton.classList.remove('AudioOn')
+                clearInterval(window.mediaInterval)
+            }
 
-            })
-        // } else {
-
-        // }
+        })
     })
 
     socket.on('voice', function(arrayBuffer) {

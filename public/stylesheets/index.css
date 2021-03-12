@@ -254,5 +254,19 @@ body {
 .Container .ChatPillHidden {
   right: -200%;
 }
+.Container .AudioOn {
+  background-color: white !important;
+  color: #5900CA !important;
+  animation: AudioOn 1s infinite;
+}
+
+@keyframes AudioOn {
+  from {
+    font-size: 1rem;
+  }
+  to {
+    font-size: 1.25rem;
+  }
+}
 
 /*# sourceMappingURL=index.css.map */
