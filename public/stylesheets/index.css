@@ -124,7 +124,47 @@ body {
 .Container .ChatContainer .Header .CloseButton:hover {
   cursor: pointer;
 }
-.Container .ChatContainer .ChatMessages {
+.Container .ChatContainer .ChatContent {
+  display: flex;
+  width: 100%;
+  margin-top: 32px;
+  height: 80%;
+}
+.Container .ChatContainer .ChatContent .ActiveMembers {
+  width: 25%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+}
+.Container .ChatContainer .ChatContent .ActiveMembers .ActiveLabel {
+  color: #303030;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-left: 8px;
+}
+.Container .ChatContainer .ChatContent .ActiveMembers .Member {
+  width: 100%;
+  padding: 8px 12px;
+  color: #5900CA;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+}
+.Container .ChatContainer .ChatContent .ActiveMembers .Member i {
+  margin-right: 4px;
+}
+.Container .ChatContainer .ChatContent .ChatMain {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+}
+.Container .ChatContainer .ChatContent .ChatMain .ChatMessages {
   background-color: #f2f7fe;
   min-height: 200px;
   max-height: 75%;
@@ -133,19 +173,19 @@ body {
   display: flex;
   flex-direction: column;
 }
-.Container .ChatContainer .ChatMessages .ChatRow {
+.Container .ChatContainer .ChatContent .ChatMain .ChatMessages .ChatRow {
   width: 100%;
   padding: 8px 8px;
   display: flex;
   flex-direction: column;
 }
-.Container .ChatContainer .ChatMessages .ChatRow .Meta {
+.Container .ChatContainer .ChatContent .ChatMain .ChatMessages .ChatRow .Meta {
   color: #303030;
   font-size: 0.8rem;
   font-weight: bold;
   padding: 0px 4px;
 }
-.Container .ChatContainer .ChatMessages .ChatRow .Message {
+.Container .ChatContainer .ChatContent .ChatMain .ChatMessages .ChatRow .Message {
   max-width: 60%;
   background-color: #5900CA;
   color: white;
@@ -154,20 +194,20 @@ body {
   padding: 6px 12px;
   border-radius: 4px;
 }
-.Container .ChatContainer .ChatMessages .RowLeft {
+.Container .ChatContainer .ChatContent .ChatMain .ChatMessages .RowLeft {
   align-items: flex-start;
 }
-.Container .ChatContainer .ChatMessages .RowRight {
+.Container .ChatContainer .ChatContent .ChatMain .ChatMessages .RowRight {
   align-items: flex-end;
 }
-.Container .ChatContainer .Input {
+.Container .ChatContainer .ChatContent .ChatMain .Input {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-top: 12px;
 }
-.Container .ChatContainer .Input input {
+.Container .ChatContainer .ChatContent .ChatMain .Input input {
   width: 80%;
   height: 40px;
   padding: 0px 20px;
@@ -175,7 +215,7 @@ body {
   background-color: #F3F3F3;
   border-radius: 4px;
 }
-.Container .ChatContainer .Input i {
+.Container .ChatContainer .ChatContent .ChatMain .Input i {
   width: 8%;
   height: 40px;
   display: flex;
@@ -187,7 +227,7 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.2s;
 }
-.Container .ChatContainer .Input i:hover {
+.Container .ChatContainer .ChatContent .ChatMain .Input i:hover {
   cursor: pointer;
   background-color: #5800cae7;
 }

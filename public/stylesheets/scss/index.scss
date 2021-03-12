@@ -124,71 +124,111 @@ body{
                 }
             }
         }
-        .ChatMessages{
-            background-color: #f2f7fe;
-            min-height: 200px; 
-            max-height: 75%;
-            overflow-y: auto;
-            width: 100%;
+        .ChatContent{
             display: flex;
-            flex-direction: column;
-            .ChatRow{
-                width: 100%;
-                padding: 8px 8px;
+            width: 100%;
+            margin-top: 32px;
+            height: 80%;
+            .ActiveMembers{
+                width: 25%;
+                height: 100%;
+                overflow-y: auto;
+                padding: 4px;
                 display: flex;
                 flex-direction: column;
-                .Meta{
+                .ActiveLabel{
                     color: $darkGrey;
                     font-size: 0.8rem;
+                    margin-bottom: 8px;
                     font-weight: bold;
-                    padding: 0px 4px;
+                    text-decoration: underline;
+                    padding-left: 8px;
                 }
-                .Message{
-                    max-width: 60%;
-                    background-color: $primary;
-                    color: white;
+                .Member{
+                    width: 100%;
+                    padding: 8px 12px;
+                    color: $primary;
                     font-weight: bold;
-                    margin-top: 4px;
-                    padding: 6px 12px;
                     border-radius: 4px;
+                    box-shadow: 0px 0px 4px rgba(0,0,0,0.1);
+                    margin-bottom: 8px;
+                    i {
+                        margin-right: 4px;
+                    }
                 }
             }
-            .RowLeft{
-                align-items: flex-start;
-            }
-            .RowRight{
-                align-items: flex-end;
-            }
-        }
-        .Input{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-top: 12px;
-            input{
-                width: 80%;
-                // padding: 8px 20px;
-                height: 40px;
-                padding: 0px 20px;
-                border: solid 1px $stroke;
-                background-color: $lightGrey;
-                border-radius: 4px;
-            }
-            i{
-                width: 8%;
-                height: 40px;
+            .ChatMain{
+                width: 75%;
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: $primary;
-                color: white;
-                border-radius: 8px;
-                box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-                transition: all 0.2s;
-                &:hover{
-                    cursor: pointer;
-                    background-color: $primaryHover;
+                flex-direction: column;
+                padding-left: 16px;
+                .ChatMessages{
+                    background-color: #f2f7fe;
+                    min-height: 200px; 
+                    max-height: 75%;
+                    overflow-y: auto;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .ChatRow{
+                        width: 100%;
+                        padding: 8px 8px;
+                        display: flex;
+                        flex-direction: column;
+                        .Meta{
+                            color: $darkGrey;
+                            font-size: 0.8rem;
+                            font-weight: bold;
+                            padding: 0px 4px;
+                        }
+                        .Message{
+                            max-width: 60%;
+                            background-color: $primary;
+                            color: white;
+                            font-weight: bold;
+                            margin-top: 4px;
+                            padding: 6px 12px;
+                            border-radius: 4px;
+                        }
+                    }
+                    .RowLeft{
+                        align-items: flex-start;
+                    }
+                    .RowRight{
+                        align-items: flex-end;
+                    }
+                }
+                .Input{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    margin-top: 12px;
+                    input{
+                        width: 80%;
+                        // padding: 8px 20px;
+                        height: 40px;
+                        padding: 0px 20px;
+                        border: solid 1px $stroke;
+                        background-color: $lightGrey;
+                        border-radius: 4px;
+                    }
+                    i{
+                        width: 8%;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: $primary;
+                        color: white;
+                        border-radius: 8px;
+                        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+                        transition: all 0.2s;
+                        &:hover{
+                            cursor: pointer;
+                            background-color: $primaryHover;
+                        }
+                    }
                 }
             }
         }

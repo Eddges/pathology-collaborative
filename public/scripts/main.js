@@ -13,6 +13,7 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
     const chatPill = document.querySelector('.ChatPill')
     const chatContainer = document.querySelector('#chatContainer')
     const closeButton = document.querySelector('.CloseButton')
+    const activeMembers = document.querySelector('.ActiveMembers')
 
     chatPill.addEventListener('click', () => {
         chatPill.classList.add('ChatPillHidden')
@@ -37,7 +38,7 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
         }
     })
 
-    socket.on('userJoin', ({user, time}) => {
+    socket.on('userJoin', ({user, time, activeUsers}) => {
         let msg = ''
         const messageDiv = document.createElement('div')
         messageDiv.classList.add('ChatRow')
@@ -52,6 +53,7 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
             `
         chatMessages.appendChild(messageDiv)
         chatMessages.scrollTop = chatMessages.scrollHeight;
+        renderActiveUsers(activeUsers)
     })
     
     socket.on('sendMessage', ({msg, user, time}) => {
@@ -73,4 +75,16 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
     socket.on('disconnect', () => {
         socket.emit('userDisconnected', {user: username})
     })
+
+    const renderActiveUsers = users => {
+        users.forEach(iterator => {
+            const memberDiv = document.createElement('div')
+            memberDiv.classList.add('Member')
+            memberDiv.innerHTML = `
+                    <i class='far fa-user'></i>
+                    <span class='MemberName'>${iterator.user}</span>
+                `
+            activeMembers.appendChild(memberDiv)
+        })
+    }
 }
