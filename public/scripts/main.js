@@ -72,11 +72,22 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     })
 
-    socket.on('disconnect', () => {
-        socket.emit('userDisconnected', {user: username})
+    socket.on('userLeave', ({ user, time, activeUsers}) => {
+        const messageDiv = document.createElement('div')
+        messageDiv.classList.add('ChatRow')
+        messageDiv.classList.add('RowLeft')
+        messageDiv.innerHTML = `
+            <span class='Meta'>${user} has left <i>${time}</i></span>
+            `
+        console.log('User left: ', user, time)
+        chatMessages.appendChild(messageDiv)
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        renderActiveUsers(activeUsers)
     })
 
     const renderActiveUsers = users => {
+        activeMembers.innerHTML = `<span class='ActiveLabel'>Active</span>`
+        console.log('active users: ', users)
         users.forEach(iterator => {
             const memberDiv = document.createElement('div')
             memberDiv.classList.add('Member')

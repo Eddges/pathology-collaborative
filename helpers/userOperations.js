@@ -1,4 +1,4 @@
-const users = require('../data/users')
+let users = require('../data/users')
 
 const getUsername = (id) => {
     console.log('passed id: ', id)
@@ -28,8 +28,8 @@ const removeUser = id => {
     users = newUsers
 }
 
-const getRoomUsers = id => {
-    const room = getUserRoom(id)
+const getRoomUsers = room => {
+    // const room = getUserRoom(id)
     const roomUsers = users.filter(iterator => {
         if (iterator.room === room) {
             return true
