@@ -1,8 +1,10 @@
 let users = require('../data/users')
 
+const createUser = (user) => {
+    users.push(user)
+}
+
 const getUsername = (id) => {
-    console.log('passed id: ', id)
-    console.log('all users: ', users)
     const user = users.find(iterator => iterator.id === id)
     return user.user
 }
@@ -40,6 +42,7 @@ const getRoomUsers = room => {
 }
 
 module.exports = {
+    createUser,
     getUserRoom,
     getUserTime,
     getUsername,

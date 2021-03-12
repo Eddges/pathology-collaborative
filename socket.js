@@ -9,9 +9,9 @@ io.on("connection", (socket) => {
         console.log(user + " has joined");
         socket.join(room);
         const time = getTimeString(new Date().toString());
-        users.push({ id: socket.id, user, room, time });
-        console.log("active users: ", users);
+        userOperations.createUser({ id: socket.id, user, room, time })
         const activeUsers = userOperations.getRoomUsers(room)
+        console.log('Active users: ', activeUsers)
         io.to(room).emit("userJoin", { user, time, activeUsers });
         socket.on("sendMessage", ({ msg, user }) => {
             const time = getTimeString(new Date().toString());
