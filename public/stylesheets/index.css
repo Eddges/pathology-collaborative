@@ -66,6 +66,31 @@ body {
   width: 100px;
   height: 100%;
   background-color: #5900CA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Menu .MenuIcon {
+  width: 25%;
+}
+.Menu .MenuLine {
+  width: 50%;
+  height: 1px;
+  background-color: white;
+  margin: 36px 0px;
+}
+.Menu i {
+  color: white;
+  margin-bottom: 24px;
+  font-size: 1.25rem;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.Menu i:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .Container {
