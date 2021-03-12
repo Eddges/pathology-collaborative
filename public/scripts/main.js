@@ -14,6 +14,9 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
     const chatContainer = document.querySelector('#chatContainer')
     const closeButton = document.querySelector('.CloseButton')
     const activeMembers = document.querySelector('.ActiveMembers')
+    const audioSendButton = document.querySelector('#audioSend')
+
+    let sendAudioFlag = false
 
     chatPill.addEventListener('click', () => {
         chatPill.classList.add('ChatPillHidden')
@@ -85,10 +88,6 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
         renderActiveUsers(activeUsers)
     })
 
-    const audioSendButton = document.querySelector('#audioSend')
-
-    let sendAudioFlag = false
-
     audioSendButton.addEventListener('click', () => {
         sendAudioFlag = !sendAudioFlag
         // if (sendAudioFlag) {
@@ -107,11 +106,19 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
                     socket.emit('radio', blob)
                     console.log('voice stopped')
                 }
-                mediaRecorder.start()
 
-                setTimeout(function() {
-                    mediaRecorder.stop()
-                }, 5000)
+                if (sendAudioFlag) {
+                    window.mediaInterval = setInterval(function() {
+                        mediaRecorder.start()
+        
+                        setTimeout(function() {
+                            mediaRecorder.stop()
+                        }, 995)
+                    }, 1000)
+                } else {
+                    clearInterval(window.mediaInterval)
+                }
+
             })
         // } else {
 
@@ -124,7 +131,6 @@ if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
         console.log('arrayBuffer: ', arrayBuffer)
         const audio = document.createElement('audio')
         audio.src = window.URL.createObjectURL(blob)
-        chatMessages.appendChild(audio)
         audio.play()
     })
 

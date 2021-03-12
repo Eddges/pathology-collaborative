@@ -16,6 +16,11 @@
             integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
             crossorigin="anonymous"
         />
+        <script>
+            if (!(localStorage.getItem('user') && localStorage.getItem('room'))) {
+                window.location.href = '/login'
+            }
+        </script>
         <title>caMicroscope</title>
     </head>
 

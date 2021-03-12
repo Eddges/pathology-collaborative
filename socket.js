@@ -18,7 +18,6 @@ io.on("connection", (socket) => {
             io.to(room).emit("sendMessage", { msg, user, time });
         });
         socket.on('radio', function(blob) {
-            console.log('emitting to room the blob')
             socket.broadcast.to(room).emit('voice', blob)
         })
     });
