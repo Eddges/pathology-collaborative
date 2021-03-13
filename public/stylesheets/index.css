@@ -105,12 +105,33 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%235900ca' fill-opacity='0.08' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
 .Container nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 100px);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 4vh 4vh 0vh 4vh;
+}
+.Container nav .Logo {
   color: #5900CA;
   font-weight: bold;
   font-size: 1.5rem;
-  position: absolute;
-  top: 4vh;
-  left: 4vh;
+}
+.Container nav .LogoutButton {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #5900CA;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+.Container nav .LogoutButton:hover {
+  cursor: pointer;
+  background-color: #5800cae7;
 }
 .Container .ImageViewerContainer {
   width: 100%;
