@@ -300,22 +300,40 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             }
         }
     }
-    .ChatPill{
+    .Pill{
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
         right: 0px;
+        width: 160px;
         padding: 12px 24px;
         color: $primary;
         font-weight: bold;
+        font-size: 0.8rem;
         background-color: white;
         box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
         transition: all 0.2s;
+        .Title{
+            margin-left: 8px;
+        }
         &:hover{
             cursor: pointer;
             background-color: whitesmoke;
             right: 2px;
         }
+    }
+    .ChatPill {
+        top: 40%;
+        font-size: 1rem;
+    }
+    .SyncPill {
+        top: 50%;
+    }
+    .UnSyncPill {
+        top: 50%;
+        background-color: $primarySuperLite;
+        top: 50%;
+        display: none;
     }
 }
 
