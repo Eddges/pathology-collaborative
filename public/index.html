@@ -35,8 +35,12 @@
             <i class='fas fa-ruler'></i>
             <i class='fas fa-share-alt'></i>
         </div>
+
         <div class="Container">
             <nav>caMicroscope</nav>
+            <div class='ImageViewerContainer'>
+                <div id='openSeaDragonContainer'></div>
+            </div>
             <div id='chatContainer' class='ChatContainer ChatContainerHidden'>
                 <div class='Header'>
                     <div class='Left'>
@@ -72,6 +76,8 @@
         crossorigin="anonymous"
     ></script>
 
+    <script src='scripts/openseadragon.min.js'></script>
+
     <script>
         const socket = io()
     </script>
@@ -79,4 +85,6 @@
     <script src="scripts/main.js"></script>
 
     <script src="scripts/audio.js"></script>
+
+    <script src="scripts/viewer.js"></script>
 </html>
