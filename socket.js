@@ -20,6 +20,9 @@ io.on("connection", (socket) => {
         socket.on('radio', function(blob) {
             socket.broadcast.to(room).emit('voice', blob)
         })
+        socket.on('viewerEvent', ({ zoom, center }) => {
+            socket.broadcast.to(room).emit('viewerEvent', { zoom, center })
+        })
     });
     socket.on("disconnect", () => {
         const username = userOperations.getUsername(socket.id);
