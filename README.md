@@ -24,7 +24,9 @@ npm install
 
 ### Local hosting
 
-`node index.js`
+```
+node index.js
+```
 
 The application can be accessed on localhost:3000
 _3000_ is the default port number
